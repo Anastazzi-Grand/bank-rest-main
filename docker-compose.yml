@@ -33,14 +33,20 @@ services:
     container_name: bank_app
     ports:
       - "8080:8080"
-    depends_on:
-      postgres:
-        condition: service_healthy
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bank_db
-      SPRING_DATASOURCE_USERNAME: bank_user
-      SPRING_DATASOURCE_PASSWORD: bank_pass
-      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+#  app:
+#    build: .
+#    container_name: bank_app
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      postgres:
+#        condition: service_healthy
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/bank_db
+#      SPRING_DATASOURCE_USERNAME: bank_user
+#      SPRING_DATASOURCE_PASSWORD: bank_pass
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+#
 
 volumes:
   postgres_data:
